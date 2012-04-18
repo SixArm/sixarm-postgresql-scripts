@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Postgres data file default path best-guess for the current operating system.
+#
+#   * Debian and Ubuntu have OSTYPE "linux-gnu": /usr/local/pgsql/data
+#   * Mac OS X has OSTYPE "darwin11":  /usr/local/var/postgresql/data
+ 
+case "$OSTYPE" in
+  linux-gnu)
+    echo "/usr/local/pgsql/data"
+    ;;
+  darwin11)
+    echo "/usr/local/var/pgsql/data"
+    ;;
+esac
