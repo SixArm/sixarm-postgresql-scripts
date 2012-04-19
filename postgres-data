@@ -4,6 +4,10 @@
 #
 #   * Debian and Ubuntu have OSTYPE "linux-gnu": /usr/local/pgsql/data
 #   * Mac OS X has OSTYPE "darwin11":  /usr/local/var/postgresql/data
+
+set -o errexit
+set -o nounset
+set -o xtrace
  
 case "$OSTYPE" in
   linux-gnu)

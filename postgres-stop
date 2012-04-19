@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Stop Postgres running on the data file in the default directory for the operating system.
+#
+# Calls postgres-data script.
+
+set -o errexit
+set -o nounset
+set -o xtrace
+
+dir=`postgres-data`
+pg_ctl -D $dir stop -s -m fast
