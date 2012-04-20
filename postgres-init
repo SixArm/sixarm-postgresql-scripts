@@ -6,7 +6,7 @@
 
 set -o errexit
 set -o nounset
-set -o xtrace
-
 dir=`postgres-data`
+
+set -o xtrace
 initdb --pgdata=$dir --username=postgres --pwprompt --auth=password --encoding=UTF8
