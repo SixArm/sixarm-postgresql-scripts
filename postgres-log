@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Postgres log file default path best-guess for the current operating system.
+#
+#   * Debian and Ubuntu have OSTYPE "linux-gnu": /var/log/postgresql/data.log
+#   * Mac OS X has OSTYPE "darwin11":  /usr/local/var/postgresql.log
+
+set -o errexit
+set -o nounset
+ 
+case "$OSTYPE" in
+  linux-gnu)
+    echo "/var/log/postgresql/data.log"
+    ;;
+  darwin11)
+    echo "/var/log/postgresql.log"
+    ;;
+esac
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Postgres user best-guess for the current operating system.
+#
+#   * Debian and Ubuntu have OSTYPE "linux-gnu": postgres
+#   * Mac OS X has OSTYPE "darwin11":  _postgres
+
+set -o errexit
+set -o nounset
+ 
+case "$OSTYPE" in
+  linux-gnu)
+    echo "postgres"
+    ;;
+  darwin11)
+    echo "_postgres"
+    ;;
+esac
