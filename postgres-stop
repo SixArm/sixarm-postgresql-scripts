@@ -6,7 +6,12 @@
 
 set -o errexit
 set -o nounset
+
+ctl=`postgres-ctl`
 dir=`postgres-data`
+user=`postgres-user`
 
 set -o xtrace
-pg_ctl -D $dir stop -s -m fast
+sudo -u "$user" "$ctl" -D "$dir" stop -s -m fast
+
+

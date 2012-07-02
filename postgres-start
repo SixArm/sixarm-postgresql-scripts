@@ -7,9 +7,10 @@
 set -o errexit
 set -o nounset
 
+ctl=`postgres-ctl`
 dir=`postgres-data`
 log=`postgres-log`
 user=`postgres-user`
 
 set -o xtrace
-sudo -u "$user" pg_ctl -D "$dir" -l "$log" start
+sudo -u "$user" "$ctl" -D "$dir" -l "$log" start
