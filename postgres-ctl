@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Postgres control default path best-guess for the current operating system.
+#
+#   * Debian and Ubuntu have OSTYPE "linux-gnu": /usr/local/pgsql/bin/pg_ctl
+#   * Mac OS X has OSTYPE "darwin11":  /usr/local/bin/pg_ctl
+
+set -o errexit
+set -o nounset
+
+case "$OSTYPE" in
+  linux-gnu)
+    echo "/usr/local/pgsql/bin/pg_ctl"
+    ;;
+  darwin11)
+    echo "/usr/local/bin/pg_ctl"
+    ;;
+esac
