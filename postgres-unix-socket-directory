@@ -1,0 +1,1 @@
+grep unix_socket_directory /etc/postgresql/*/main/*.conf
