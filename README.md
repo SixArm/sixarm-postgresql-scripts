@@ -1,4 +1,4 @@
-# SixArm.com » PostgreSQL » scripts for databases
+# PostgreSQL » scripts for databases
 
 
 Server:
