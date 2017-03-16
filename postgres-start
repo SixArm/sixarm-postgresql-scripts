@@ -3,7 +3,15 @@
 # Start Postgres running on the data file in the default directory for the operating system.
 #
 # Calls postgres-data script.
-
+#
+# Example on macOS:
+#
+#     pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+#
+# If you're using macOS and brew postgresql, then you may prefer:
+#
+#     brew services start postgresql
+#
 set -o errexit
 set -o nounset
 

@@ -4,7 +4,8 @@
 #
 #   * Debian and Ubuntu have OSTYPE "linux-gnu": postgres
 #   * Mac OS X has OSTYPE "darwin11":  _postgres
-
+#   * Default: postgres
+#
 set -o errexit
 set -o nounset
  
@@ -14,5 +15,8 @@ case "$OSTYPE" in
     ;;
   darwin11)
     echo "_postgres"
+    ;;
+  *)
+    echo "postgres"
     ;;
 esac
